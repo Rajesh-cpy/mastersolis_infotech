@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+    <title>My Profile</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <style>
+        /* Reset some default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Container styling */
+        .profile-container {
+            width: 90%;
+            max-width: 400px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Profile image styling */
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: #555;
+            margin: 0 auto 15px;
+        }
+
+        /* View mode styling */
+        .profile-info p {
+            font-size: 1em;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .edit-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }.back-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: 300px;
+        }
+
+        .edit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Edit mode styling */
+        .edit-profile-container {
+            display: none;
+        }
+
+        .edit-profile-container label {
+            display: block;
+            font-weight: 500;
+            color: #333;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .save-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .save-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile-container">
+        <!-- Profile Image -->
+        <a class="back-btn" href="home.html">Back</a>
+        <div class="profile-image">A</div>
+
+        <!-- View Mode: Profile Information -->
+        <div class="profile-info">
+            <p><strong>Name:</strong> <span id="view-name">John Doe</span></p>
+            <p><strong>Bio:</strong> <span id="view-bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></p>
+            <button class="edit-btn" onclick="toggleEdit()">Edit Profile</button>
+            <a class="btn btn-primary" href="login.html">Log Out</a>
+        </div>
+
+        <!-- Edit Mode: Edit Profile Form -->
+        <div class="edit-profile-container">
+            <form onsubmit="saveChanges(event)">
+                <label for="name">Name</label>
+                <input type="text" id="edit-name" placeholder="Enter your name" value="John Doe">
+
+                <label for="bio">Bio</label>
+                <textarea id="edit-bio" placeholder="Tell something about yourself...">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea>
+
+                <button type="submit" class="save-btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to toggle between view and edit mode
+        function toggleEdit() {
+            document.querySelector('.profile-info').style.display = 'none';
+            document.querySelector('.edit-profile-container').style.display = 'block';
+        }
+
+        // JavaScript to save changes and toggle back to view mode
+        function saveChanges(event) {
+            event.preventDefault();
+            const name = document.getElementById('edit-name').value;
+            const bio = document.getElementById('edit-bio').value;
+
+            // Update view mode with new values
+            document.getElementById('view-name').innerText = name;
+            document.getElementById('view-bio').innerText = bio;
+
+            // Toggle back to view mode
+            document.querySelector('.profile-info').style.display = 'block';
+            document.querySelector('.edit-profile-container').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

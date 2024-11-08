@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 400px;
+      padding: 2.5rem;
+      text-align: center;
+      background: #fff;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+    }
+
+    h2 {
+      color: #333;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .signup-text {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .signup-text a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .signup-text a:hover {
+      text-decoration: underline;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      text-align: left;
+    }
+
+    label {
+      font-size: 0.9rem;
+      color: #555;
+      font-weight: 500;
+    }
+
+    input[type="email"], input[type="password"] {
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+
+    input[type="email"]:focus, input[type="password"]:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    }
+
+    .forgot-password {
+      font-size: 0.9rem;
+      text-align: right;
+    }
+
+    .forgot-password a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    .login-button {
+      padding: 0.8rem;
+      background-color: #000;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .login-button:hover {
+      background-color: #333;
+      transform: scale(1.05);
+    }
+
+    .or-text {
+      margin: 1.5rem 0;
+      color: #666;
+      font-size: 0.9rem;
+      position: relative;
+    }
+
+    .or-text::before, .or-text::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: #ddd;
+    }
+
+    .or-text::before {
+      left: 0;
+    }
+
+    .or-text::after {
+      right: 0;
+    }
+
+    .google-login {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #666;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .google-login img {
+      width: 20px;
+      height: 20px;
+      margin-right: 0.5rem;
+    }
+
+    .google-login:hover {
+      background-color: #f0f0f0;
+    }
+    .image{
+        width: 60%;
+    }
+    .bg-container{
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+    }
+    img{
+        border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-container">
+        <img class="image" src="https://img.freepik.com/free-vector/flat-safer-internet-day-illustration_23-2151164065.jpg?t=st=1730992372~exp=1730995972~hmac=aeff92b370ce432fe1e2ddd0de5e1f8c0ea033d9e08bc65fe8322f4a08408411&w=740">
+      <div class="login-container">
+        <h2>Log In</h2>
+        <p class="signup-text">New to this site? <a href="signup.html">Sign Up</a></p>
+        <form class="login-form">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="password">Password *</label>
+          <input type="password" id="password" name="password" required>
+          
+          <div class="forgot-password">
+            <a href="#">Forgot password?</a>
+          </div>
+    
+          <button type="submit" class="login-button">Log In</button>
+        </form>
+    
+        <p class="or-text">or Log In with</p>
+    
+        <div class="google-login">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1280px-Google_%22G%22_Logo.svg.png" alt="Google Logo">
+            Log in with Google
+        </div>      
+      </div>
+  </div>
+</body>
+</html>

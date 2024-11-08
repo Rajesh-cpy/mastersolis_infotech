@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    .search-container {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border: 2px solid #333;
+        border-radius: 30px;
+        padding: 5px 10px;
+        margin: 20px;
+        background-color: white;
+      }
+      
+      .search-input {
+        border: none;
+        outline: none;
+        padding: 10px;
+        font-size: 16px;
+        width: 100%;
+        border-radius: 30px 0 0 30px;
+      }
+      
+      .search-btn {
+        background-color: #333;
+        color: white;
+        border: none;
+        outline: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 0 30px 30px 0;
+        transition: background-color 0.3s;
+      }
+      
+      .search-btn:hover {
+        background-color: #555;
+      }
+    
+       .course{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 3px;
+        margin: 2rem;
+        background-color: #fff;
+        
+        border-radius: 2rem;
+       }
+    
+      .card {
+        width: 300px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        text-align: center;
+        margin: 2rem;
+        justify-content: flex-start;
+        
+            
+      }
+      
+      .card-img {
+        width: 100%;
+        height: auto;
+      }
+      
+      .card-content {
+        padding: 15px;
+      }
+      
+      .card-title {
+        font-size: 1.5em;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      
+      .card-description {
+        font-size: 1em;
+        color: #666;
+        margin-bottom: 20px;
+      }
+      
+      .card-btn {
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.3s;
+    
+      }
+      
+      .card-btn:hover {
+        background-color: #555;
+      }
+
+      .heading{
+        margin: 1rem;
+        padding: .5rem;
+        height: 1.25em;
+        text-align: center;
+        color: black;
+        font-size: 3rem;
+      }
+</style>
+<body>
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="https://static.wixstatic.com/media/66b930_db1d91061a2c4cd8bad3a619207b9f74~mv2.jpg/v1/fill/w_86,h_56,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Screenshot%202023-12-07%20205436_edited.jpg" class="food-munch-logo" alt="Logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" id="navItem1" href="home.html">Home </a>
+              <a class="nav-link" href="#wcuSection" id="navItem2">Our Services</a>
+              <a class="nav-link" href="#exploreMenuSection" id="navItem3">Products</a>
+              <a class="nav-link active" href="course.html" id="navItem4">Courses<span class="sr-only">(current)</spasn></a>
+              <a class="nav-link" href="internship.html" id="navItem5">Internships</a>
+             <div class="nav-item dropdown">
+                  More
+              </a>
+              <div class="dropdown-menu" aria-labelledby="moreDropdown">
+                  <a class="dropdown-item" href="event.html">Events</a>
+                  <a class="dropdown-item" href="#blogsSection">Blogs</a>
+                  <a class="dropdown-item" href="#resourcesSection">Resources</a>
+                  <a class="dropdown-item" href="groupfeed.html">Groups</a>
+              <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="but
+                  <a class="dropdown-item" href="#contactUsSection">Contact Us</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="myaccount.html">My Account</a>
+                  <a class="dropdown-item" href="signup.html">Sign Up</a>
+                  <a class="dropdown-item" href="login.html">Login</a>
+              </div>
+          </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <section class="course d-flex flex-row pt-5 pb-5 mt-5">
+        <div class="card">
+            <img src="assets/Image-place-holder_edited.webp" alt="Card Image" class="card-img">
+            <div class="card-content">
+              <h2 class="card-title">
+                DSA Using Python</h2>
+              <p class="card-description">This course can make you proficient in data structures and algorithms using python</p>
+              <button class="card-btn">Read More</button>
+            </div>
+          </div>
+        <div class="card">
+            <img src="assets/2.webp" alt="Card Image" class="card-img">
+            <div class="card-content">
+              <h2 class="card-title">
+                React js with project</h2>
+              <p class="card-description">This is built for frontend proficients to deliver project using react framework</p>
+              <button class="card-btn">Read More</button>
+            </div>
+          </div>
+        <div class="card">
+            <img src="assets/3.webp" alt="Card Image" class="card-img">
+            <div class="card-content">
+              <h2 class="card-title">
+                Front End - HTML, CSS, JS</h2>
+              <p class="card-description">This course is for learning basics of frontend domain to become ready on react or angular frameworks</p>
+              <button class="card-btn">Read More</button>
+            </div>
+          </div>
+        <div class="card cardbelow">
+            <img src="assets/4.webp" alt="Card Image" class="card-img">
+            <div class="card-content">
+              <h2 class="card-title">
+                Backend Python Django</h2>
+              <p class="card-description">This is built for backend proficients to deliver project using djangoframework.</p>
+              <button class="card-btn">Read More</button>
+            </div>
+          </div>
+    </section>
+    
+    
+    
+            <div class="heading">Final Year Project</div>
+            <section class="course d-flex flex-row justify-content-center">
+    
+                
+                <div class="card">
+                    <img src="assets/1a.jpeg" alt="Card Image" class="card-img">
+                    <div class="card-content">
+                      <h2 class="card-title">
+                        HealthConnect</h2>
+                      <p class="card-description">Your trusted source for health information, expert consultations, and the latest medical advancements</p>
+                      <button class="card-btn">Read More</button>
+                    </div>
+                  </div>
+                <div class="card">
+                    <img src="assets/2a.jpeg" alt="Card Image" class="card-img">
+                    <div class="card-content">
+                      <h2 class="card-title">
+                        ShopEase</h2>
+                      <p class="card-description">Discover the latest trends and essentials with easy browsing and secure shopping</p>
+                      <button class="card-btn">Read More</button>
+                    </div>
+                  </div>
+                <div class="card">
+                    <img src="assets/3a.jpeg" alt="Card Image" class="card-img">
+                    <div class="card-content">
+                      <h2 class="card-title">
+                        MegaMarket</h2>
+                      <p class="card-description">Bringing top brands and trending products to your fingertips. Enjoy effortless shopping with just a few clicks!</p>
+                      <button class="card-btn">Read More</button>
+                    </div>
+                  </div>
+                
+            </section>
+    </section>
+    <div class="footer-section pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <!-- Logo and Email Section -->
+          <div class="col-12 text-center">
+            <img src="https://static.wixstatic.com/media/66b930_db1d91061a2c4cd8bad3a619207b9f74~mv2.jpg/v1/fill/w_86,h_56,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Screenshot%202023-12-07%20205436_edited.jpg" class="food-munch-logo" />
+            <h1 class="footer-section-mail-id">
+              Email: <a href="mailto:mastersolisinfotech@gmail.com" class="email-link">mastersolisinfotech@gmail.com</a>
+            </h1>
+            <p class="footer-section-address">
+              Feel free to reach out to us. We’d love to hear from you!
+            </p>
+          </div>
+        </div>
+    
+        <!-- Contact Form Section -->
+        <div class="row" id="contactUsSection">
+          <div class="col-12 col-md-6">
+            <h3>Contact Us</h3>
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="contactName">Name:</label>
+                <input type="text" class="form-control" id="contactName" placeholder="Enter your name" required>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email address:</label>
+                <input type="email" class="form-control" id="contactEmail" placeholder="Enter your email" required>
+              </div>
+              <div class="form-group">
+                <label for="contactMessage">Message:</label>
+                <textarea class="form-control" id="contactMessage" rows="4" placeholder="Your message..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+    
+          <!-- Feedback Form Section -->
+          <div class="col-12 col-md-6">
+            <h3>Feedback</h3>
+            <form id="feedbackForm">
+              <div class="form-group">
+                <label for="feedbackName">Name:</label>
+                <input type="text" class="form-control" id="feedbackName" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="feedbackRating">Rating:</label>
+                <select class="form-control" id="feedbackRating" required>
+                  <option value="5">5 - Excellent</option>
+                  <option value="4">4 - Good</option>
+                  <option value="3">3 - Average</option>
+                  <option value="2">2 - Below Average</option>
+                  <option value="1">1 - Poor</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="feedbackComments">Comments:</label>
+                <textarea class="form-control" id="feedbackComments" rows="4" placeholder="Your feedback..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-secondary">Submit Feedback</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <footer style="background-color: transparent; color: #ccc; padding-top: 25px; text-align: center;">
+        &copy; <span id="year"></span> MasterSolis Infotech. All rights reserved.
+    </footer>
+    
+    <script>
+        // Automatically update the year
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    </div>
+</body>
+</html>
